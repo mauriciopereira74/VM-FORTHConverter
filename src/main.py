@@ -9,7 +9,7 @@ inp = r"""
 2 DOBRO .
 : AVERAGE ( a b -- avg ) + 2/ ;
 10 20 AVERAGE .
-DUP
+
 """
 
 def main():

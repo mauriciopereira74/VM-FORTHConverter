@@ -5,8 +5,6 @@ operations = {'+': 'ADD', '-': 'SUB', '*': 'MUL', '/': 'DIV'}
 
 word_definitions = {}
 
-stack = []
-
 
 def p_expression(p):
     """
@@ -26,18 +24,10 @@ def p_word_def(p):
 
 def p_statement_number(p):
     'statement : NUMBER'
-    stack.append(p[1])
     p[0] = f'PUSHI {p[1]}\n'
 
 def p_statement_dup(p):
     'statement : DUP'
-    if stack:
-        value = stack[-1]
-        stack.append(value)
-        p[0] = ''
-    else:
-        print("Error: Cannot DUP, stack is empty")
-
 
 def p_char_expression(p):
     """
@@ -62,27 +52,8 @@ def p_statement_operator(p):
               | TIMES
               | DIVIDE
     """
-    if len(stack) < 2:
-        print("Error: Insufficient operands for operation")
-        p[0] = ''
-    else:
-        operand2 = stack.pop()
-        operand1 = stack.pop()
-        if p[1] == 'ADD':
-            result = operand1 + operand2
-        elif p[1] == 'SUB':
-            result = operand1 - operand2
-        elif p[1] == 'MUL':
-            result = operand1 * operand2
-        elif p[1] == 'DIV':
-            if operand2 != 0:
-                result = operand1 / operand2
-            else:
-                print("Error: Division by zero")
-                p[0] = ''
-                return
-        stack.append(result)
-        p[0] = f'{p[1]}\n'
+    p[0] = operations[p[1]] + '\n'
+
 
 def p_statement_output(p):
     'statement : DOT'

@@ -1,0 +1,485 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> statement
+Rule 2     expression -> word_def
+Rule 3     expression -> expression statement
+Rule 4     expression -> expression word_def
+Rule 5     expression -> char_expression
+Rule 6     expression -> expression char_expression
+Rule 7     word_def -> COLON WORD expression SEMICOLON
+Rule 8     statement -> NUMBER
+Rule 9     statement -> DUP
+Rule 10    char_expression -> CHAR CHARACTER
+Rule 11    statement -> WORD
+Rule 12    statement -> PLUS
+Rule 13    statement -> MINUS
+Rule 14    statement -> TIMES
+Rule 15    statement -> DIVIDE
+Rule 16    statement -> DOT
+
+Terminals, with rules where they appear
+
+CHAR                 : 10
+CHARACTER            : 10
+COLON                : 7
+DIVIDE               : 15
+DOT                  : 16
+DUP                  : 9
+MINUS                : 13
+NUMBER               : 8
+PLUS                 : 12
+SEMICOLON            : 7
+TIMES                : 14
+WORD                 : 7 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+char_expression      : 5 6
+expression           : 3 4 6 7 0
+statement            : 1 3
+word_def             : 2 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . statement
+    (2) expression -> . word_def
+    (3) expression -> . expression statement
+    (4) expression -> . expression word_def
+    (5) expression -> . char_expression
+    (6) expression -> . expression char_expression
+    (8) statement -> . NUMBER
+    (9) statement -> . DUP
+    (11) statement -> . WORD
+    (12) statement -> . PLUS
+    (13) statement -> . MINUS
+    (14) statement -> . TIMES
+    (15) statement -> . DIVIDE
+    (16) statement -> . DOT
+    (7) word_def -> . COLON WORD expression SEMICOLON
+    (10) char_expression -> . CHAR CHARACTER
+
+    NUMBER          shift and go to state 5
+    DUP             shift and go to state 6
+    WORD            shift and go to state 7
+    PLUS            shift and go to state 8
+    MINUS           shift and go to state 9
+    TIMES           shift and go to state 10
+    DIVIDE          shift and go to state 11
+    DOT             shift and go to state 12
+    COLON           shift and go to state 13
+    CHAR            shift and go to state 14
+
+    expression                     shift and go to state 1
+    statement                      shift and go to state 2
+    word_def                       shift and go to state 3
+    char_expression                shift and go to state 4
+
+state 1
+
+    (0) S' -> expression .
+    (3) expression -> expression . statement
+    (4) expression -> expression . word_def
+    (6) expression -> expression . char_expression
+    (8) statement -> . NUMBER
+    (9) statement -> . DUP
+    (11) statement -> . WORD
+    (12) statement -> . PLUS
+    (13) statement -> . MINUS
+    (14) statement -> . TIMES
+    (15) statement -> . DIVIDE
+    (16) statement -> . DOT
+    (7) word_def -> . COLON WORD expression SEMICOLON
+    (10) char_expression -> . CHAR CHARACTER
+
+    NUMBER          shift and go to state 5
+    DUP             shift and go to state 6
+    WORD            shift and go to state 7
+    PLUS            shift and go to state 8
+    MINUS           shift and go to state 9
+    TIMES           shift and go to state 10
+    DIVIDE          shift and go to state 11
+    DOT             shift and go to state 12
+    COLON           shift and go to state 13
+    CHAR            shift and go to state 14
+
+    statement                      shift and go to state 15
+    word_def                       shift and go to state 16
+    char_expression                shift and go to state 17
+
+state 2
+
+    (1) expression -> statement .
+
+    NUMBER          reduce using rule 1 (expression -> statement .)
+    DUP             reduce using rule 1 (expression -> statement .)
+    WORD            reduce using rule 1 (expression -> statement .)
+    PLUS            reduce using rule 1 (expression -> statement .)
+    MINUS           reduce using rule 1 (expression -> statement .)
+    TIMES           reduce using rule 1 (expression -> statement .)
+    DIVIDE          reduce using rule 1 (expression -> statement .)
+    DOT             reduce using rule 1 (expression -> statement .)
+    COLON           reduce using rule 1 (expression -> statement .)
+    CHAR            reduce using rule 1 (expression -> statement .)
+    $end            reduce using rule 1 (expression -> statement .)
+    SEMICOLON       reduce using rule 1 (expression -> statement .)
+
+
+state 3
+
+    (2) expression -> word_def .
+
+    NUMBER          reduce using rule 2 (expression -> word_def .)
+    DUP             reduce using rule 2 (expression -> word_def .)
+    WORD            reduce using rule 2 (expression -> word_def .)
+    PLUS            reduce using rule 2 (expression -> word_def .)
+    MINUS           reduce using rule 2 (expression -> word_def .)
+    TIMES           reduce using rule 2 (expression -> word_def .)
+    DIVIDE          reduce using rule 2 (expression -> word_def .)
+    DOT             reduce using rule 2 (expression -> word_def .)
+    COLON           reduce using rule 2 (expression -> word_def .)
+    CHAR            reduce using rule 2 (expression -> word_def .)
+    $end            reduce using rule 2 (expression -> word_def .)
+    SEMICOLON       reduce using rule 2 (expression -> word_def .)
+
+
+state 4
+
+    (5) expression -> char_expression .
+
+    NUMBER          reduce using rule 5 (expression -> char_expression .)
+    DUP             reduce using rule 5 (expression -> char_expression .)
+    WORD            reduce using rule 5 (expression -> char_expression .)
+    PLUS            reduce using rule 5 (expression -> char_expression .)
+    MINUS           reduce using rule 5 (expression -> char_expression .)
+    TIMES           reduce using rule 5 (expression -> char_expression .)
+    DIVIDE          reduce using rule 5 (expression -> char_expression .)
+    DOT             reduce using rule 5 (expression -> char_expression .)
+    COLON           reduce using rule 5 (expression -> char_expression .)
+    CHAR            reduce using rule 5 (expression -> char_expression .)
+    $end            reduce using rule 5 (expression -> char_expression .)
+    SEMICOLON       reduce using rule 5 (expression -> char_expression .)
+
+
+state 5
+
+    (8) statement -> NUMBER .
+
+    NUMBER          reduce using rule 8 (statement -> NUMBER .)
+    DUP             reduce using rule 8 (statement -> NUMBER .)
+    WORD            reduce using rule 8 (statement -> NUMBER .)
+    PLUS            reduce using rule 8 (statement -> NUMBER .)
+    MINUS           reduce using rule 8 (statement -> NUMBER .)
+    TIMES           reduce using rule 8 (statement -> NUMBER .)
+    DIVIDE          reduce using rule 8 (statement -> NUMBER .)
+    DOT             reduce using rule 8 (statement -> NUMBER .)
+    COLON           reduce using rule 8 (statement -> NUMBER .)
+    CHAR            reduce using rule 8 (statement -> NUMBER .)
+    $end            reduce using rule 8 (statement -> NUMBER .)
+    SEMICOLON       reduce using rule 8 (statement -> NUMBER .)
+
+
+state 6
+
+    (9) statement -> DUP .
+
+    NUMBER          reduce using rule 9 (statement -> DUP .)
+    DUP             reduce using rule 9 (statement -> DUP .)
+    WORD            reduce using rule 9 (statement -> DUP .)
+    PLUS            reduce using rule 9 (statement -> DUP .)
+    MINUS           reduce using rule 9 (statement -> DUP .)
+    TIMES           reduce using rule 9 (statement -> DUP .)
+    DIVIDE          reduce using rule 9 (statement -> DUP .)
+    DOT             reduce using rule 9 (statement -> DUP .)
+    COLON           reduce using rule 9 (statement -> DUP .)
+    CHAR            reduce using rule 9 (statement -> DUP .)
+    $end            reduce using rule 9 (statement -> DUP .)
+    SEMICOLON       reduce using rule 9 (statement -> DUP .)
+
+
+state 7
+
+    (11) statement -> WORD .
+
+    NUMBER          reduce using rule 11 (statement -> WORD .)
+    DUP             reduce using rule 11 (statement -> WORD .)
+    WORD            reduce using rule 11 (statement -> WORD .)
+    PLUS            reduce using rule 11 (statement -> WORD .)
+    MINUS           reduce using rule 11 (statement -> WORD .)
+    TIMES           reduce using rule 11 (statement -> WORD .)
+    DIVIDE          reduce using rule 11 (statement -> WORD .)
+    DOT             reduce using rule 11 (statement -> WORD .)
+    COLON           reduce using rule 11 (statement -> WORD .)
+    CHAR            reduce using rule 11 (statement -> WORD .)
+    $end            reduce using rule 11 (statement -> WORD .)
+    SEMICOLON       reduce using rule 11 (statement -> WORD .)
+
+
+state 8
+
+    (12) statement -> PLUS .
+
+    NUMBER          reduce using rule 12 (statement -> PLUS .)
+    DUP             reduce using rule 12 (statement -> PLUS .)
+    WORD            reduce using rule 12 (statement -> PLUS .)
+    PLUS            reduce using rule 12 (statement -> PLUS .)
+    MINUS           reduce using rule 12 (statement -> PLUS .)
+    TIMES           reduce using rule 12 (statement -> PLUS .)
+    DIVIDE          reduce using rule 12 (statement -> PLUS .)
+    DOT             reduce using rule 12 (statement -> PLUS .)
+    COLON           reduce using rule 12 (statement -> PLUS .)
+    CHAR            reduce using rule 12 (statement -> PLUS .)
+    $end            reduce using rule 12 (statement -> PLUS .)
+    SEMICOLON       reduce using rule 12 (statement -> PLUS .)
+
+
+state 9
+
+    (13) statement -> MINUS .
+
+    NUMBER          reduce using rule 13 (statement -> MINUS .)
+    DUP             reduce using rule 13 (statement -> MINUS .)
+    WORD            reduce using rule 13 (statement -> MINUS .)
+    PLUS            reduce using rule 13 (statement -> MINUS .)
+    MINUS           reduce using rule 13 (statement -> MINUS .)
+    TIMES           reduce using rule 13 (statement -> MINUS .)
+    DIVIDE          reduce using rule 13 (statement -> MINUS .)
+    DOT             reduce using rule 13 (statement -> MINUS .)
+    COLON           reduce using rule 13 (statement -> MINUS .)
+    CHAR            reduce using rule 13 (statement -> MINUS .)
+    $end            reduce using rule 13 (statement -> MINUS .)
+    SEMICOLON       reduce using rule 13 (statement -> MINUS .)
+
+
+state 10
+
+    (14) statement -> TIMES .
+
+    NUMBER          reduce using rule 14 (statement -> TIMES .)
+    DUP             reduce using rule 14 (statement -> TIMES .)
+    WORD            reduce using rule 14 (statement -> TIMES .)
+    PLUS            reduce using rule 14 (statement -> TIMES .)
+    MINUS           reduce using rule 14 (statement -> TIMES .)
+    TIMES           reduce using rule 14 (statement -> TIMES .)
+    DIVIDE          reduce using rule 14 (statement -> TIMES .)
+    DOT             reduce using rule 14 (statement -> TIMES .)
+    COLON           reduce using rule 14 (statement -> TIMES .)
+    CHAR            reduce using rule 14 (statement -> TIMES .)
+    $end            reduce using rule 14 (statement -> TIMES .)
+    SEMICOLON       reduce using rule 14 (statement -> TIMES .)
+
+
+state 11
+
+    (15) statement -> DIVIDE .
+
+    NUMBER          reduce using rule 15 (statement -> DIVIDE .)
+    DUP             reduce using rule 15 (statement -> DIVIDE .)
+    WORD            reduce using rule 15 (statement -> DIVIDE .)
+    PLUS            reduce using rule 15 (statement -> DIVIDE .)
+    MINUS           reduce using rule 15 (statement -> DIVIDE .)
+    TIMES           reduce using rule 15 (statement -> DIVIDE .)
+    DIVIDE          reduce using rule 15 (statement -> DIVIDE .)
+    DOT             reduce using rule 15 (statement -> DIVIDE .)
+    COLON           reduce using rule 15 (statement -> DIVIDE .)
+    CHAR            reduce using rule 15 (statement -> DIVIDE .)
+    $end            reduce using rule 15 (statement -> DIVIDE .)
+    SEMICOLON       reduce using rule 15 (statement -> DIVIDE .)
+
+
+state 12
+
+    (16) statement -> DOT .
+
+    NUMBER          reduce using rule 16 (statement -> DOT .)
+    DUP             reduce using rule 16 (statement -> DOT .)
+    WORD            reduce using rule 16 (statement -> DOT .)
+    PLUS            reduce using rule 16 (statement -> DOT .)
+    MINUS           reduce using rule 16 (statement -> DOT .)
+    TIMES           reduce using rule 16 (statement -> DOT .)
+    DIVIDE          reduce using rule 16 (statement -> DOT .)
+    DOT             reduce using rule 16 (statement -> DOT .)
+    COLON           reduce using rule 16 (statement -> DOT .)
+    CHAR            reduce using rule 16 (statement -> DOT .)
+    $end            reduce using rule 16 (statement -> DOT .)
+    SEMICOLON       reduce using rule 16 (statement -> DOT .)
+
+
+state 13
+
+    (7) word_def -> COLON . WORD expression SEMICOLON
+
+    WORD            shift and go to state 18
+
+
+state 14
+
+    (10) char_expression -> CHAR . CHARACTER
+
+    CHARACTER       shift and go to state 19
+
+
+state 15
+
+    (3) expression -> expression statement .
+
+    NUMBER          reduce using rule 3 (expression -> expression statement .)
+    DUP             reduce using rule 3 (expression -> expression statement .)
+    WORD            reduce using rule 3 (expression -> expression statement .)
+    PLUS            reduce using rule 3 (expression -> expression statement .)
+    MINUS           reduce using rule 3 (expression -> expression statement .)
+    TIMES           reduce using rule 3 (expression -> expression statement .)
+    DIVIDE          reduce using rule 3 (expression -> expression statement .)
+    DOT             reduce using rule 3 (expression -> expression statement .)
+    COLON           reduce using rule 3 (expression -> expression statement .)
+    CHAR            reduce using rule 3 (expression -> expression statement .)
+    $end            reduce using rule 3 (expression -> expression statement .)
+    SEMICOLON       reduce using rule 3 (expression -> expression statement .)
+
+
+state 16
+
+    (4) expression -> expression word_def .
+
+    NUMBER          reduce using rule 4 (expression -> expression word_def .)
+    DUP             reduce using rule 4 (expression -> expression word_def .)
+    WORD            reduce using rule 4 (expression -> expression word_def .)
+    PLUS            reduce using rule 4 (expression -> expression word_def .)
+    MINUS           reduce using rule 4 (expression -> expression word_def .)
+    TIMES           reduce using rule 4 (expression -> expression word_def .)
+    DIVIDE          reduce using rule 4 (expression -> expression word_def .)
+    DOT             reduce using rule 4 (expression -> expression word_def .)
+    COLON           reduce using rule 4 (expression -> expression word_def .)
+    CHAR            reduce using rule 4 (expression -> expression word_def .)
+    $end            reduce using rule 4 (expression -> expression word_def .)
+    SEMICOLON       reduce using rule 4 (expression -> expression word_def .)
+
+
+state 17
+
+    (6) expression -> expression char_expression .
+
+    NUMBER          reduce using rule 6 (expression -> expression char_expression .)
+    DUP             reduce using rule 6 (expression -> expression char_expression .)
+    WORD            reduce using rule 6 (expression -> expression char_expression .)
+    PLUS            reduce using rule 6 (expression -> expression char_expression .)
+    MINUS           reduce using rule 6 (expression -> expression char_expression .)
+    TIMES           reduce using rule 6 (expression -> expression char_expression .)
+    DIVIDE          reduce using rule 6 (expression -> expression char_expression .)
+    DOT             reduce using rule 6 (expression -> expression char_expression .)
+    COLON           reduce using rule 6 (expression -> expression char_expression .)
+    CHAR            reduce using rule 6 (expression -> expression char_expression .)
+    $end            reduce using rule 6 (expression -> expression char_expression .)
+    SEMICOLON       reduce using rule 6 (expression -> expression char_expression .)
+
+
+state 18
+
+    (7) word_def -> COLON WORD . expression SEMICOLON
+    (1) expression -> . statement
+    (2) expression -> . word_def
+    (3) expression -> . expression statement
+    (4) expression -> . expression word_def
+    (5) expression -> . char_expression
+    (6) expression -> . expression char_expression
+    (8) statement -> . NUMBER
+    (9) statement -> . DUP
+    (11) statement -> . WORD
+    (12) statement -> . PLUS
+    (13) statement -> . MINUS
+    (14) statement -> . TIMES
+    (15) statement -> . DIVIDE
+    (16) statement -> . DOT
+    (7) word_def -> . COLON WORD expression SEMICOLON
+    (10) char_expression -> . CHAR CHARACTER
+
+    NUMBER          shift and go to state 5
+    DUP             shift and go to state 6
+    WORD            shift and go to state 7
+    PLUS            shift and go to state 8
+    MINUS           shift and go to state 9
+    TIMES           shift and go to state 10
+    DIVIDE          shift and go to state 11
+    DOT             shift and go to state 12
+    COLON           shift and go to state 13
+    CHAR            shift and go to state 14
+
+    expression                     shift and go to state 20
+    statement                      shift and go to state 2
+    word_def                       shift and go to state 3
+    char_expression                shift and go to state 4
+
+state 19
+
+    (10) char_expression -> CHAR CHARACTER .
+
+    NUMBER          reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    DUP             reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    WORD            reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    PLUS            reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    MINUS           reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    TIMES           reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    DIVIDE          reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    DOT             reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    COLON           reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    CHAR            reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    $end            reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+    SEMICOLON       reduce using rule 10 (char_expression -> CHAR CHARACTER .)
+
+
+state 20
+
+    (7) word_def -> COLON WORD expression . SEMICOLON
+    (3) expression -> expression . statement
+    (4) expression -> expression . word_def
+    (6) expression -> expression . char_expression
+    (8) statement -> . NUMBER
+    (9) statement -> . DUP
+    (11) statement -> . WORD
+    (12) statement -> . PLUS
+    (13) statement -> . MINUS
+    (14) statement -> . TIMES
+    (15) statement -> . DIVIDE
+    (16) statement -> . DOT
+    (7) word_def -> . COLON WORD expression SEMICOLON
+    (10) char_expression -> . CHAR CHARACTER
+
+    SEMICOLON       shift and go to state 21
+    NUMBER          shift and go to state 5
+    DUP             shift and go to state 6
+    WORD            shift and go to state 7
+    PLUS            shift and go to state 8
+    MINUS           shift and go to state 9
+    TIMES           shift and go to state 10
+    DIVIDE          shift and go to state 11
+    DOT             shift and go to state 12
+    COLON           shift and go to state 13
+    CHAR            shift and go to state 14
+
+    statement                      shift and go to state 15
+    word_def                       shift and go to state 16
+    char_expression                shift and go to state 17
+
+state 21
+
+    (7) word_def -> COLON WORD expression SEMICOLON .
+
+    NUMBER          reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    DUP             reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    WORD            reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    PLUS            reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    MINUS           reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    TIMES           reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    DIVIDE          reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    DOT             reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    COLON           reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    CHAR            reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    $end            reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+    SEMICOLON       reduce using rule 7 (word_def -> COLON WORD expression SEMICOLON .)
+
