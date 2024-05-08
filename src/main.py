@@ -2,9 +2,14 @@ import json
 from lexer import lexer
 from parserr import parser
 
-inp = """
-7 2* 1+ . ( 15=7*2+1 )
-(12 * ( 20 - 17 ))
+
+inp = r"""
+
+: DOBRO 2 * ;
+2 DOBRO .
+: AVERAGE ( a b -- avg ) + 2/ ;
+10 20 AVERAGE .
+DUP
 """
 
 def main():
