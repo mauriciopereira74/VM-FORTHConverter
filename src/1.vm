@@ -1,0 +1,37 @@
+pushi 0
+pushi 0
+start
+pushi 2
+pusha DOBRO
+call
+pop 1
+pushg 0
+pushi 4
+pusha DOBRO
+call
+pop 1
+pushg 0
+writei
+pushi 2
+pusha BOAS
+call
+pop 1
+pushg 1
+writei
+stop
+
+DOBRO:
+pushfp
+load -1
+pushi 2
+mul
+storeg 0
+return
+
+BOAS:
+pushfp
+load -1
+pushi 5
+div
+storeg 1
+return
