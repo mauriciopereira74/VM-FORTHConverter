@@ -65,28 +65,24 @@
             | SPACES
             | CR
 
-    Dup     : DUP
+    dup     : DUP
 
-    Cond    : If
-            | IF expressions Else
-            | IF Else
-            | IF expressions THEN
-            | IF THEN
+    condition   : if
 
-    Do      : DO do_operators LOOP
+    do      : DO do_operators LOOP
 
-    Else    : ELSE do_operators THEN
+    else    : ELSE operators THEN
 
     OneOne  : ONEONE
 
-    Drop    : DROP
+    drop    : DROP
 
-    Rot     : ROT
+    rot     : ROT
 
-    Swap    : SWAP
+    swap    : SWAP
 
-    Over    : OVER
+    over    : OVER
 
-    Res     : "."
+    dot     : "."
 
-    Termo   : NUMBER
+    number   : NUMBER
