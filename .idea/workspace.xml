@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb04c1a8-fa42-4a22-8f71-16d177565513" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/func.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
       <updated>1715334218148</updated>
       <workItem from="1715334219475" duration="5472000" />
       <workItem from="1715345566993" duration="86000" />
-      <workItem from="1715372857352" duration="1697000" />
+      <workItem from="1715372857352" duration="2766000" />
     </task>
     <servers />
   </component>
@@ -56,5 +56,16 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.vm" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Downloads/PL_2024_GRUPO/src/proj_yacc.py</url>
+          <line>242</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

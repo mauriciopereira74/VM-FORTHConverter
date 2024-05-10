@@ -121,7 +121,6 @@ def p_operators_rec(p):
                 | operators number
                 | operators condition
     """
-
     p[0] = p[1] + [p[2]]
     return p
 
@@ -191,7 +190,7 @@ def p_aritmetic(p):
         vm_code = 'equal'
     else:
         vm_code = 'mod'
-    p[0] = vm_code
+    p[0] = Function(2,1,vm_code)
     return p
 
 def p_print_string(p):
@@ -202,7 +201,7 @@ def p_print_string(p):
     # [3:-1:] -> contéudo da string
     # [start:stop:]
     vm_code = f'pushs "{p[1][3:-1:]}"\nwrites'
-    p[0] = vm_code
+    p[0] = Function(0,0,vm_code)
     return p
 
 def p_print_emit(p):
