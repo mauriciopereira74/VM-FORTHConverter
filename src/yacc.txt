@@ -1,0 +1,92 @@
+    statement       : expressions
+
+    expressions     : expressions Word
+                    | word
+
+    Word            : number
+                    | function
+                    | operator
+                    | contition
+                    | function_definition
+
+
+    function        : STRING
+
+
+    function_definition : ":" STRING operators ";"
+
+
+    operator    : aritmetic
+                | dot
+                | oneOne
+                | swap
+                | drop
+                | dup
+                | over
+                | rot
+                | print
+                | number
+                | condition
+
+
+    operators   : operators aritmetic
+                | operators dot
+                | operators oneOne
+                | operators swap
+                | operators drop
+                | operators dup
+                | operators over
+                | operators rot
+                | operators print
+                | operators number
+                | operators condition
+
+
+    operators   : aritmetic
+                | dot
+                | oneOne
+                | swap
+                | drop
+                | dup
+                | over
+                | rot
+                | print
+                | number
+                | condition
+
+
+    aritmetic   : OPERATORS
+                | MOD
+
+    print   : DOT
+            | DO
+            | EMIT
+            | CHAR
+            | SPACES
+            | CR
+
+    Dup     : DUP
+
+    Cond    : If
+            | IF expressions Else
+            | IF Else
+            | IF expressions THEN
+            | IF THEN
+
+    Do      : DO do_operators LOOP
+
+    Else    : ELSE do_operators THEN
+
+    OneOne  : ONEONE
+
+    Drop    : DROP
+
+    Rot     : ROT
+
+    Swap    : SWAP
+
+    Over    : OVER
+
+    Res     : "."
+
+    Termo   : NUMBER

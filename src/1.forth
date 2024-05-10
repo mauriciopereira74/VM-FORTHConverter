@@ -1,0 +1,4 @@
+: DOBRO 2* ;
+2 DOBRO 4 DOBRO .
+: BOAS 5 / ;
+2 BOAS .
