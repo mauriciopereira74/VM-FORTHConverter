@@ -1,4 +1,4 @@
-from parser import parser
+from parser import analyser
 import sys
 
 def main(filename,outFilename=None):
@@ -12,16 +12,16 @@ def main(filename,outFilename=None):
             if flag:
                 fullLine += line
                 if ";" in line:
-                    parser.parse(fullLine)
+                    analyser.parse(fullLine)
                     fullLine = ""
             if ":" in line and ";" not in line: 
                 flag = True
                 fullLine += line
             else:
-                parser.parse(line)
-            parser.lineNumber += 1
+                analyser.parse(line)
+            analyser.lNumb += 1
         with open(outFilename,"w") as outFile:
-            outFile.write(parser.code)
+            outFile.write(analyser.operations)
 
 if __name__  == "__main__":
     if len(sys.argv) == 2:
