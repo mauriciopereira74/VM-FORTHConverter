@@ -8,7 +8,7 @@ tokens = (
     "OPERATORS",
     "MOD",
     "DUP",
-    "ONEONE",
+    "BASIC",
     "SWAP",
     "DROP",
     "OVER",
@@ -27,14 +27,12 @@ tokens = (
     "STRING"
 )
 
-
-
 def t_MOD(t):
     r'\bMOD\b'
     return t
 
 def t_ITERATOR(t):
-    r'\b[Ii]\b|[Jj]\b'
+    r'\bI\b|J\b'
     return t
 
 def t_DO(t):
@@ -77,12 +75,12 @@ def t_DUP(t):
     r'\bDUP\b'
     return t
 
-def t_ONEONE(t):
+def t_BASIC(t):
     r"\b1\+|1\-|2\*|2\/\b"
     return t
 
 def t_SWAP(t):
-    r'\bSWAP\b'
+    r'[sS][wW][aA][pP]'
     return t
 
 def t_NUMBER(t):

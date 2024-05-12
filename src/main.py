@@ -1,5 +1,6 @@
 from parser import analyser
 import sys
+from parser import usage
 
 def main(filename,outFilename=None):
     if not outFilename:
@@ -12,14 +13,15 @@ def main(filename,outFilename=None):
             if flag:
                 fullLine += line
                 if ";" in line:
+                    usage()
                     analyser.parse(fullLine)
                     fullLine = ""
-            if ":" in line and ";" not in line: 
+            if ":" in line and ";" not in line:
                 flag = True
                 fullLine += line
             else:
+                usage()
                 analyser.parse(line)
-            analyser.lNumb += 1
         with open(outFilename,"w") as outFile:
             outFile.write(analyser.operations)
 

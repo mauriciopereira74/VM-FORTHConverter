@@ -1,5 +1,20 @@
+pushi 0
+pushi 0
 start
-pushi 2
-pushi 3
+pushi 10
+pushi 0
+storeg 0
+storeg 1
+while1:
+pushg 1
+pushg 0
+sub
+jz endwhile1
+pushg 0
+pushg 0
+pushi 1
 add
+storeg 0
+jump while1
+endwhile1:
 stop
