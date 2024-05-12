@@ -80,7 +80,7 @@ def t_BASIC(t):
     return t
 
 def t_SWAP(t):
-    r'[sS][wW][aA][pP]'
+    r'\bSWAP\b'
     return t
 
 def t_NUMBER(t):
