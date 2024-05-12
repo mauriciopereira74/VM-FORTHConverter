@@ -1,4 +1,9 @@
-: DOBRO 2* ;
-2 DOBRO 4 DOBRO .
-: BOAS 5 / ;
-2 BOAS .
+3 2 + .
+2 5 * .
+2 2* .
+: ORDENADO 1000 + ;
+2 ORDENADO .
+
+
+
+

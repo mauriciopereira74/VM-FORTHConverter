@@ -1,37 +1,36 @@
 pushi 0
-pushi 0
 start
+pushi 3
 pushi 2
-pusha DOBRO
-call
-pop 1
-pushg 0
-pushi 4
-pusha DOBRO
-call
-pop 1
-pushg 0
+add
 writei
 pushi 2
-pusha BOAS
+pushi 5
+mul
+writei
+pushi 2
+pushi 2
+mul
+writei
+pushi 2
+pusha ORDENADO
 call
 pop 1
-pushg 1
+pushg 0
 writei
 stop
 
-DOBRO:
+ORDENADO:
 pushfp
 load -1
-pushi 2
-mul
+pushi 1000
+add
 storeg 0
 return
 
-BOAS:
-pushfp
-load -1
-pushi 5
-div
-storeg 1
-return
+
+
+
+
+
+
