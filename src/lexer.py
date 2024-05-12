@@ -8,7 +8,7 @@ tokens = (
     "OPERATORS",
     "MOD",
     "DUP",
-    "BASIC",
+    "ONEONE",
     "SWAP",
     "DROP",
     "OVER",
@@ -77,7 +77,7 @@ def t_DUP(t):
     r'\bDUP\b'
     return t
 
-def t_BASIC(t):
+def t_ONEONE(t):
     r"\b1\+|1\-|2\*|2\/\b"
     return t
 

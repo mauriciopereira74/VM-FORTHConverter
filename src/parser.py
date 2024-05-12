@@ -98,7 +98,7 @@ def p_operator(a):
     """
     operator    : aritmetic
                 | dot
-                | basic
+                | oneOne
                 | swap
                 | drop
                 | dup
@@ -126,7 +126,7 @@ def p_operators_rec(a):
     """
     operators   : operators aritmetic
                 | operators dot
-                | operators basic
+                | operators oneOne
                 | operators swap
                 | operators drop
                 | operators dup
@@ -145,7 +145,7 @@ def p_operators(a):
     """
     operators   : aritmetic
                 | dot
-                | basic
+                | oneOne
                 | swap
                 | drop
                 | dup
@@ -190,7 +190,7 @@ def p_aritmetic(a):
 
 def p_single_operations(a):
     """
-    basic   : BASIC
+    oneOne   : ONEONE
     """
     if   a[1] == '1+':
         vm_code = 'pushi 1\nadd'
@@ -368,7 +368,7 @@ def p_do_operators(a):
     """
     do_operators    : do_operators aritmetic
                     | do_operators dot
-                    | do_operators basic
+                    | do_operators oneOne
                     | do_operators swap
                     | do_operators drop
                     | do_operators dup
@@ -390,7 +390,7 @@ def p_do_operators_simple(a):
     """
     do_operators    : aritmetic
                     | dot
-                    | basic
+                    | oneOne
                     | swap
                     | drop
                     | dup
